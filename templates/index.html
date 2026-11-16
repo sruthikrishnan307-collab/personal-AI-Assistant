@@ -1,0 +1,129 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Candy - Personal AI Assistant</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+    <div class="app-layout">
+
+        <!-- LEFT SIDEBAR -->
+        <aside class="sidebar">
+
+            <div class="sidebar-header">
+                <div class="avatar">🍬</div>
+                <h2>Candy</h2>
+            </div>
+
+            <div class="sidebar-menu">
+
+                <button type="button" id="newChatButton">
+                    + New Chat
+                </button>
+
+                <h3 class="history-heading">Recent Chats</h3>
+
+                <div id="chatHistoryList" class="chat-history-list">
+                    Loading chats...
+                </div>
+
+                <button type="button" id="manageMemoriesButton">
+                    🧠 Manage Memories
+                </button>
+
+            </div>
+
+            <!-- MEMORIES PANEL -->
+            <div id="memoriesPanel" class="memories-panel"
+                 style="display: none;">
+
+                <h3>Candy's Memories</h3>
+
+                <div id="memoriesList">
+                    Loading memories...
+                </div>
+
+                <button type="button" id="clearAllMemoriesButton">
+                    🗑️ Clear All Memories
+                </button>
+
+            </div>
+
+            <div class="sidebar-footer">
+                Your personal AI companion 🍬
+            </div>
+
+        </aside>
+
+        <!-- MAIN CHAT AREA -->
+        <div class="chat-container">
+
+            <header class="chat-header">
+
+                <div>
+                    <h2>My AI Assistant</h2>
+                    <p><span class="status-dot"></span> Online</p>
+                </div>
+
+            </header>
+
+            <main class="chat-messages" id="chatMessages">
+
+                <div class="message bot-message">
+                    <div class="message-content">
+                        Hi there! I'm Candy 🍬
+
+                        I'm your personal AI assistant. I'm here to help
+                        you learn, solve problems, write code, organize
+                        your ideas, and make everyday tasks easier.
+
+                        What would you like to do today?
+                    </div>
+                </div>
+
+            </main>
+
+            <form class="chat-input-area" id="chatForm">
+
+                <input
+                    type="text"
+                    id="userInput"
+                    placeholder="Ask me anything..."
+                    autocomplete="off"
+                    required
+                >
+
+                <button type="submit" id="sendButton">
+                    Send
+                </button>
+
+                <button type="button" id="clearChatButton"
+                        class="clear-chat-btn">
+                    🗑️ Clear Chat
+                </button>
+
+            </form>
+
+            <footer>
+                Powered by Gemini AI
+            </footer>
+
+        </div>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dompurify@3.2.6/dist/purify.min.js"></script>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+</body>
+</html>
